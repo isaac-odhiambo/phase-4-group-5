@@ -1,7 +1,10 @@
-
-h2{
+.about{
     text-align: center;
+     border-bottom: 3px solid salmon;
+     width: 400px;
+     margin-left: 400px;
 }
+
 p{
     margin: 30px;
     line-height: 30px;
@@ -36,7 +39,8 @@ h1{
 }
 .vision--title{
      border-bottom: 3px solid salmon;
-  width: 200px;
+  width: 150px;
+  text-align: center;
 }
 .vision--title:hover{
     color: burlywood;

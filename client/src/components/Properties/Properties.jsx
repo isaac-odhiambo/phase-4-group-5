@@ -31,6 +31,12 @@ function Properties() {
   return (
     <>
       <h1>Properties</h1>
+      <div className='search-field'>
+        <input className="input-field" type="text" placeholder='search here'/>
+        <button className ="search-btn">
+          search
+        </button>
+      </div>
       <div className="properties--1">
         {properties.map((property) => (
           <div className="item" key={property.id}>
@@ -40,7 +46,7 @@ function Properties() {
             <h4>Price: {property.price}</h4>
             {/* <h4>Description: {property.description}</h4> */}
             {/* Use Link to navigate to the Details component */}
-            <button>
+            <button id="btn-seemore">
               <Link to={`/details/${property.id}`}  className="seemore--btn">
               See More
             </Link>
