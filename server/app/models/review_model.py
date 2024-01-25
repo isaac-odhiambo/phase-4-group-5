@@ -6,6 +6,9 @@ class Review(db.Model):
     # house_id = db.Column(db.Integer, db.ForeignKey('house.id', name='fk_review_house_id'), default=1)
     # house = db.relationship('House', backref='reviews_relation', lazy=True)
 
+
+
+
     def serialize(self):
         return {
             'id': self.id,
