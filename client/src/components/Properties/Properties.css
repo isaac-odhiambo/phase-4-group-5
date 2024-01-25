@@ -1,0 +1,35 @@
+.properties--1{
+margin: 20px;
+padding: 2rem;
+display: flex;
+flex-wrap: wrap;
+}
+
+.item img{
+    width: 400px;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+.item{
+margin: 5px;
+background-color: rgb(247, 243, 243);
+
+}
+h4{
+    text-align: center;
+}
+.seemore--btn{
+   display: block;
+   margin: 0 auto;
+   margin-top: 10px;
+   width: 25%;
+   font-size: 14px;
+   font-weight: bold;
+   background: #f0f4f6;
+   border-radius: 5px;
+}
+.seemore--btn:hover{
+background: #2980b9;
+}

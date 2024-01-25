@@ -1,0 +1,17 @@
+#footer {
+  width: 100%;
+  height: 3rem;
+  background: rgba(67, 67, 67, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: medium;
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0;
+ 
+}
+#footer-content{
+  color: white;
+}
