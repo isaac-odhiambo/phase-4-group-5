@@ -98,6 +98,8 @@ def delete_house_route(id):
 # (Similar structure for other resource routes)
 
 @bp.route('/review', methods=['POST'])
+@cross_origin()
+
 def add_review_route():
     """Create a new review."""
     return create_review()

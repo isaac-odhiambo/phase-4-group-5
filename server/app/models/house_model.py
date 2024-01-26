@@ -1,14 +1,16 @@
+# Import necessary modules
 from app import db
+from sqlalchemy.orm import relationship
 
+# Add the following relationship to your House model
 class House(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     housetype = db.Column(db.String(20), nullable=False)
     location = db.Column(db.String(20), nullable=False)
     price = db.Column(db.Float)
     description = db.Column(db.String(100))
-    url= db.Column(db.String(250))
-    # user_id = db.Column(db.Integer, db.ForeignKey('user.id', name='fk_house_user_id'), nullable=False)
-    # reviews = db.relationship('Review', backref='house', lazy=True)
+    url = db.Column(db.String(250))
+    reviews = db.relationship('Review', backref='house_reviews', lazy=True)
 
     def serialize(self):        
         return {
@@ -17,7 +19,6 @@ class House(db.Model):
             'location': self.location,
             'price': self.price,
             'description': self.description,
-            'url':self.url
-            # 'user_id': self.user_id,
-            # 'reviews': [review.serialize() for review in self.reviews]
+            'url': self.url,
+            'reviews': [review.serialize() for review in self.reviews]
         }

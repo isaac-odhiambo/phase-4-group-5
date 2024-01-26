@@ -19,6 +19,7 @@ function Details() {
 
         const data = await response.json();
         setPropertyDetails(data);
+        fetchReviews();
       } catch (error) {
         console.error('Error fetching property details', error);
       }
@@ -29,13 +30,14 @@ function Details() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/review/${id}`);
+      const response = await fetch(`http://127.0.0.1:5000/house/${id}/reviews`);
       if (!response.ok) {
         console.error('Error fetching reviews');
         return;
       }
 
       const reviewsData = await response.json();
+      console.log('Reviews:', reviewsData); // Log the reviews
       setReviews(reviewsData);
     } catch (error) {
       console.error('Error fetching reviews', error);
@@ -87,42 +89,42 @@ function Details() {
         <h1>Details</h1>
       </div>
       <div className="more-details-container">
-        {propertyDetails.map((property) => (
-          <div className="item-extra-details" key={property.id}>
+        {propertyDetails && (
+          <div className="item-extra-details" key={propertyDetails.id}>
             <div className="extra-details-image">
-              <img src={property.url} alt={`House ${property.id}`} />
+              <img src={propertyDetails.url} alt={`House ${propertyDetails.id}`} />
             </div>
             <div className="extra-details">
-              <h4>House Type: {property.housetype}</h4>
-              <h4>Location: {property.location}</h4>
-              <h4>Price: {property.price}</h4>
-              <h4>Description: {property.description}</h4>
+              <h4>House Type: {propertyDetails.housetype}</h4>
+              <h4>Location: {propertyDetails.location}</h4>
+              <h4>Price: {propertyDetails.price}</h4>
+              <h4>Description: {propertyDetails.description}</h4>
               <button className="book-btn" type="button">
                 <a href='https://wa.me/+254708103964'>BOOK NOW</a>
               </button>
             </div>
           </div>
-        ))}
+        )}
 
         <div id="reviews">
           <h1 id='comment-section-title'>Reviews</h1>
           <form className="review-form" onSubmit={handleReview}>
-            <textarea id='comment-section' 
+            <textarea id='comment-section'
               placeholder="Write a Review"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             ></textarea>
-            <br/>
+            <br />
             <button type="submit" className='submit-review-Btn'>Submit</button>
           </form>
-          <div>
+          <ul>
             {reviews.map((review) => (
-              <div key={review.id}>
+              <li key={review.id}>
                 <p className='fetched-review-comment'>{review.comment}</p>
                 {/* Add other review details as needed */}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </>

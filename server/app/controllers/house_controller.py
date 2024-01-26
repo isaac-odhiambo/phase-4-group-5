@@ -39,6 +39,12 @@ def get_houses():
 def get_house(id):
     try:
         house= House.query.filter_by(id=id).first()
+        if not house:
+            return jsonify({"message": "House not found"}), 404
+        house_data = house.serialize()
+        house_data['reviews'] = [review.serialize() for review in house.reviews]
+
+
         return jsonify ([house.serialize()])
     except SQLAlchemyError as e:
         return handle_error(e, 400)

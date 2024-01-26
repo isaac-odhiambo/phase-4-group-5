@@ -4,6 +4,8 @@ from app.models.user_model import User
 from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.security import generate_password_hash
 import logging
+from flask import current_app
+
 
 logging.basicConfig(level=logging.INFO)
 
