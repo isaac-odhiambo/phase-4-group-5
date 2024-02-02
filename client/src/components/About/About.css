@@ -1,0 +1,50 @@
+.about{
+    text-align: center;
+     border-bottom: 3px solid salmon;
+     width: 400px;
+     margin-left: 400px;
+}
+
+p{
+    margin: 30px;
+    line-height: 30px;
+    
+}
+/* .mission{
+    background-color: red;
+    border-radius: 50px; 
+    
+    
+} */
+.mission--vision{
+    display: flex;
+    background-color: aliceblue;
+    margin: 30px auto;
+    padding: 30px;
+    justify-content: space-between;   
+
+}
+.aboutus-content{
+    background-color: aliceblue;
+
+}
+h1{
+    text-align: center;
+    
+  
+}
+.mission--title{
+  border-bottom: 3px solid salmon;
+  width: 200px;
+}
+.vision--title{
+     border-bottom: 3px solid salmon;
+  width: 150px;
+  text-align: center;
+}
+.vision--title:hover{
+    color: burlywood;
+}
+.mission--title:hover{
+    color: burlywood;
+}

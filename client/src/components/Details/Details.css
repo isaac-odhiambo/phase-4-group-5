@@ -1,0 +1,71 @@
+.item-extra-details{
+    display: flex;    
+    flex: 1;
+    gap: 10px;
+}
+.extra-details-image{
+    width: 60%;
+}
+.extra-details-image img{
+    width: 100%;
+    height: 500px;
+}
+.more-details-container{
+    margin: 30px;
+    margin-bottom: 500px;
+}
+.more-details-title{
+    background-color: rgb(252, 250, 250);
+}
+.extra-details{
+    background-color: rgb(212, 212, 212);
+    width: 40%;
+}
+.extra-details h4{
+    padding-top: 40px;
+    
+}
+#reviews{
+    background-color: rgb(74, 71, 71);
+    margin-top: 20px;
+    height: fit-content;
+}
+#comment-section{
+    width: 80%;
+    margin: 30px;
+    height: 200px;
+    font-size: large;
+    padding: 30px;
+    border-radius: 8px;
+}
+#comment-section-title{
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+.fetched-review-comment{
+    color: white;
+}
+.submit-review-Btn{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    margin-left: 500px;
+    cursor: pointer;
+}
+.submit-review-Btn:hover{
+    background-color: brown;
+    border-radius: 8px;
+}
+.contact-details{
+    margin-bottom: 100px;
+}
+.contact-details h3{
+    text-align: center;
+}
+.book-btn{
+    margin-left: 300px;
+    padding: 5px;
+    background-color: aqua;
+    margin-top: 30px;
+}
